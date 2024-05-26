@@ -1,7 +1,7 @@
 package com.supplierregistry.supplierregistry.rest.model;
 
 public class BaseResponse<T> {
-private boolean success;
+    private boolean success;
     private T data;
 
     public BaseResponse(boolean success, T data) {
