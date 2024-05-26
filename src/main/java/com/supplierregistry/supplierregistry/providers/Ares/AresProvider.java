@@ -7,7 +7,7 @@ import com.supplierregistry.supplierregistry.entities.SupplierDTO;
 import com.supplierregistry.supplierregistry.errors.NotFound;
 import com.supplierregistry.supplierregistry.providers.Provider;
 import com.supplierregistry.supplierregistry.providers.Ares.entities.FindByIconResponse;
-import com.supplierregistry.supplierregistry.providers.Ares.repository.Ares;
+/*import com.supplierregistry.supplierregistry.providers.Ares.repository.Ares;*/
 import com.supplierregistry.supplierregistry.utilities.Log;
 
 /**

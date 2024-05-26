@@ -1,12 +1,6 @@
 package com.supplierregistry.supplierregistry.entities;
 
-
-
-
-
-
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -36,6 +30,10 @@ public class SupplierDTO {
     @ManyToOne
     @JoinColumn(name = "address_id")
     private AddressDTO address;
+
+
+    public SupplierDTO() {
+    }
 
     public SupplierDTO(String name, String ICO, String legalFormCode, Date establishmentDate, Date expirationDate, AddressDTO address) {
         Name = name;

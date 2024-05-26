@@ -1,11 +1,12 @@
 package com.supplierregistry.supplierregistry.entities;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "supplier_address")
 public class AddressDTO {
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int Id;

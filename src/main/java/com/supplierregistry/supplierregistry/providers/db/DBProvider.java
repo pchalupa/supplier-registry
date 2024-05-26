@@ -2,7 +2,7 @@ package com.supplierregistry.supplierregistry.providers.db;
 
 import com.supplierregistry.supplierregistry.entities.AddressDTO;
 import com.supplierregistry.supplierregistry.entities.SupplierDTO;
-import com.supplierregistry.supplierregistry.repository.AddressRepository;
+import com.supplierregistry.supplierregistry.repository.IAddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class DBProvider {
 
     @Autowired
-    AddressRepository addressRepository;
+    IAddressRepository IAddressRepository;
 
 
     public boolean InsertSupplier(SupplierDTO supplier) {
@@ -31,7 +31,7 @@ public class DBProvider {
 
     public boolean InsertAddress(AddressDTO address) {
         try {
-            addressRepository.save(address);
+            IAddressRepository.save(address);
             return true;
         } catch (Exception e) {
             return false;

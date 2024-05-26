@@ -1,3 +1,4 @@
+/*
 package com.supplierregistry.supplierregistry.providers.Ares.repository;
 
 import java.net.URI;
@@ -43,3 +44,4 @@ public class Ares {
 		}
 	}
 }
+*/
