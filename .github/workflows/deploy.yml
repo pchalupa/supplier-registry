@@ -14,6 +14,12 @@ jobs:
     environment: production
     steps:
       - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'gradle'
 
       - name: Login to Azure
         uses: azure/login@v1
@@ -29,3 +35,13 @@ jobs:
           app-name: supplier-registry
           use-staging-deployment: false
           package: ${{ env.ASC_PACKAGE_PATH }}
+
+      - name: Generate documentation
+        run: ./gradlew javadoc --no-daemon
+
+      - name: Store documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc
+          path: build/docs/javadoc
+          retention-days: 14
