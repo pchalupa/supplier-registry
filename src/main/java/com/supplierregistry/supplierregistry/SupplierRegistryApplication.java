@@ -1,4 +1,4 @@
-package com.supplierregistry.supplier_registry;
+package com.supplierregistry.supplierregistry;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

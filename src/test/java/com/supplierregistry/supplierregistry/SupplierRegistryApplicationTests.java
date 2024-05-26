@@ -1,4 +1,4 @@
-package com.supplierregistry.supplier_registry;
+package com.supplierregistry.supplierregistry;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
