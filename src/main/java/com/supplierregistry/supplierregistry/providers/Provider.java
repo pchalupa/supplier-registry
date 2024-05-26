@@ -6,6 +6,7 @@ public interface Provider {
 	/**
 	 * Find subject by its ICO.
 	 *
+	 * @param ico ICO of the subject
 	 * @return Subject
 	 */
 	public Subject findByIco(String ico);
