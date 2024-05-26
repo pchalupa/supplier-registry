@@ -12,6 +12,13 @@
 			"installGradle": "true"
 		},
 		"ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker"
+			]
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
