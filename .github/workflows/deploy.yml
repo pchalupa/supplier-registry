@@ -1,6 +1,9 @@
 name: Deploy
 
-on: push
+on:
+  push:
+    tags:
+    - '*'
 
 env:
   ASC_PACKAGE_PATH: ${{ github.workspace }}
