@@ -1,4 +1,4 @@
-package com.supplierregistry.supplierregistry.providers.Ares.repository;
+package com.supplierregistry.supplierregistry.providers.Ares.entities;
 
 public class FindByIconResponse {
 	public String ico;

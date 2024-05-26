@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 import com.supplierregistry.supplierregistry.entities.Address;
 import com.supplierregistry.supplierregistry.entities.Subject;
 import com.supplierregistry.supplierregistry.providers.Provider;
+import com.supplierregistry.supplierregistry.providers.Ares.entities.FindByIconResponse;
 import com.supplierregistry.supplierregistry.providers.Ares.repository.Ares;
-import com.supplierregistry.supplierregistry.providers.Ares.repository.FindByIconResponse;
 
 /**
  * Provider for ARES.
