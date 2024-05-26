@@ -30,6 +30,10 @@ public class AddressDTO {
         PostalCode = postalCode;
     }
 
+    public AddressDTO() {
+
+    }
+
     public int getId() {
         return Id;
     }

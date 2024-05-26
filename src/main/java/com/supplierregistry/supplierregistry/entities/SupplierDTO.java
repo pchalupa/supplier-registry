@@ -1,6 +1,10 @@
 package com.supplierregistry.supplierregistry.entities;
 
 
+
+
+
+
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -9,7 +13,7 @@ import java.util.Date;
 @Table(name = "suppliers")
 public class SupplierDTO {
 
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer Id;

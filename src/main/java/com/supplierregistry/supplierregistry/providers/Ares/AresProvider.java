@@ -24,7 +24,7 @@ public class AresProvider implements Provider {
 	 */
 	@Override
 	public SupplierDTO findByIco(String ico) {
-		try {
+		/*try {
 			FindByIconResponse data = Ares.findByIco(ico);
 
 			if (data == null) {
@@ -40,6 +40,7 @@ public class AresProvider implements Provider {
 		} catch (Exception e) {
 			Log.debug(e.getMessage());
 			return null;
-		}
+		}*/
+		return null;
 	}
 }
