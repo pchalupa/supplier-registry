@@ -1,4 +1,4 @@
-package com.supplierregistry.supplierregistry.exception;
+package com.supplierregistry.supplierregistry.rest.exception;
 
 public class BadRequestException extends RuntimeException {
     public BadRequestException(String message) {

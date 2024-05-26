@@ -1,6 +1,6 @@
-package com.supplierregistry.supplierregistry.service;
+package com.supplierregistry.supplierregistry.rest.service;
 
-import com.supplierregistry.supplierregistry.model.Company;
+import com.supplierregistry.supplierregistry.rest.model.Company;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

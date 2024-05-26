@@ -1,4 +1,4 @@
-package com.supplierregistry.supplierregistry.model;
+package com.supplierregistry.supplierregistry.rest.model;
 
 public class BaseResponse {
     private boolean success;

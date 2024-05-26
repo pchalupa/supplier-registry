@@ -1,9 +1,9 @@
-package com.supplierregistry.supplierregistry.controller;
+package com.supplierregistry.supplierregistry.rest.controller;
 
-import com.supplierregistry.supplierregistry.model.BaseResponse;
-import com.supplierregistry.supplierregistry.model.Company;
-import com.supplierregistry.supplierregistry.service.CompanyService;
-import com.supplierregistry.supplierregistry.exception.BadRequestException;
+import com.supplierregistry.supplierregistry.rest.exception.BadRequestException;
+import com.supplierregistry.supplierregistry.rest.model.Company;
+import com.supplierregistry.supplierregistry.rest.model.BaseResponse;
+import com.supplierregistry.supplierregistry.rest.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

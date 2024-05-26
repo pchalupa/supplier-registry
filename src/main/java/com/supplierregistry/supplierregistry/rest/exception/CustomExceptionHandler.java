@@ -1,6 +1,6 @@
-package com.supplierregistry.supplierregistry.exception;
+package com.supplierregistry.supplierregistry.rest.exception;
 
-import com.supplierregistry.supplierregistry.model.BaseResponse;
+import com.supplierregistry.supplierregistry.rest.model.BaseResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
