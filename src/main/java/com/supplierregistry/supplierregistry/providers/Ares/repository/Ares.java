@@ -23,7 +23,7 @@ public class Ares {
 			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
 			if (response.statusCode() != 200) {
-				throw new Exception();
+				throw new Exception("Failed to fetch data from ARES. Status code: " + response.statusCode());
 			}
 
 			Gson gson = new Gson();

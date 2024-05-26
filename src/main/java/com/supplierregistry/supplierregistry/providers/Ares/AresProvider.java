@@ -2,6 +2,8 @@ package com.supplierregistry.supplierregistry.providers.Ares;
 
 import org.springframework.stereotype.Component;
 
+import com.supplierregistry.supplierregistry.entities.AddressDTO;
+import com.supplierregistry.supplierregistry.entities.SupplierDTO;
 import com.supplierregistry.supplierregistry.errors.NotFound;
 import com.supplierregistry.supplierregistry.providers.Provider;
 import com.supplierregistry.supplierregistry.providers.Ares.entities.FindByIconResponse;
@@ -21,7 +23,7 @@ public class AresProvider implements Provider {
 	 * @return Subject
 	 */
 	@Override
-	public Subject findByIco(String ico) {
+	public SupplierDTO findByIco(String ico) {
 		try {
 			FindByIconResponse data = Ares.findByIco(ico);
 
@@ -29,11 +31,12 @@ public class AresProvider implements Provider {
 				throw new NotFound(ico + " not found");
 			}
 
-			Address address = Address.create(data.sidlo.ulice, data.sidlo.obec, data.sidlo.psc,
+			AddressDTO address = new AddressDTO(data.sidlo.ulice, data.sidlo.obec, data.sidlo.psc,
 					data.sidlo.stat);
-			Subject subject = Subject.create(data.ico, data.obchodniJmeno, address);
+			SupplierDTO supplier = new SupplierDTO(data.obchodniJmeno, data.ico, data.pravniForma, data.datumVzniku,
+					data.datumZaniku, address);
 
-			return subject;
+			return supplier;
 		} catch (Exception e) {
 			Log.debug(e.getMessage());
 			return null;
