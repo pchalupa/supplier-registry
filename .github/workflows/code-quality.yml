@@ -16,4 +16,4 @@ jobs:
           cache: 'gradle'
 
       - name: Run Checkstyle
-        run: ./gradlew checkstyleMain
+        run: ./gradlew checkstyleMain --no-daemon
