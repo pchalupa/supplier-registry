@@ -34,4 +34,4 @@ jobs:
           service-name: supplier-registry
           app-name: supplier-registry
           use-staging-deployment: false
-          package: ${{ env.ASC_PACKAGE_PATH }}/**/*.jar
+          package: ${{ env.ASC_PACKAGE_PATH }}/build/**/*.jar
