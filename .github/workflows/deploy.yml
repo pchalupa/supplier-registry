@@ -11,15 +11,6 @@ jobs:
     environment: production
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-          cache: 'gradle'
-
-      - name: Build JAR
-        run: ./gradlew clean bootJar --no-daemon
 
       - name: Login to Azure
         uses: azure/login@v1
@@ -34,4 +25,4 @@ jobs:
           service-name: supplier-registry
           app-name: supplier-registry
           use-staging-deployment: false
-          package: ${{ env.ASC_PACKAGE_PATH }}/build/**/*.jar
+          package: ${{ env.ASC_PACKAGE_PATH }}
