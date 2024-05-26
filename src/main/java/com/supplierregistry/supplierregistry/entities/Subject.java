@@ -1,5 +1,8 @@
 package com.supplierregistry.supplierregistry.entities;
 
+/**
+ * Subject entity.
+ */
 public class Subject {
 	public String ico;
 	public String name;

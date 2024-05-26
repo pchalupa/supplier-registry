@@ -1,5 +1,8 @@
 package com.supplierregistry.supplierregistry.entities;
 
+/**
+ * Address entity.
+ */
 public class Address {
 	public String street;
 	public String city;
