@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.supplierregistry.supplierregistry.entities.Address;
 import com.supplierregistry.supplierregistry.entities.Subject;
+import com.supplierregistry.supplierregistry.errors.NotFound;
 import com.supplierregistry.supplierregistry.providers.Provider;
 import com.supplierregistry.supplierregistry.providers.Ares.entities.FindByIconResponse;
 import com.supplierregistry.supplierregistry.providers.Ares.repository.Ares;
@@ -22,12 +23,20 @@ public class AresProvider implements Provider {
 	 */
 	@Override
 	public Subject findByIco(String ico) {
-		FindByIconResponse data = Ares.findByIco(ico);
+		try {
+			FindByIconResponse data = Ares.findByIco(ico);
 
-		Address address = Address.create(data.sidlo.ulice, data.sidlo.obec, data.sidlo.psc,
-				data.sidlo.stat);
-		Subject subject = Subject.create(data.ico, data.obchodniJmeno, address);
+			if (data == null) {
+				throw new NotFound(ico + " not found");
+			}
 
-		return subject;
+			Address address = Address.create(data.sidlo.ulice, data.sidlo.obec, data.sidlo.psc,
+					data.sidlo.stat);
+			Subject subject = Subject.create(data.ico, data.obchodniJmeno, address);
+
+			return subject;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }
