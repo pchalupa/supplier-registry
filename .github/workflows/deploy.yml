@@ -1,0 +1,32 @@
+name: Deploy
+
+on: push
+
+env:
+  ASC_PACKAGE_PATH: ${{ github.workspace }}
+
+jobs:
+  deploy-to-production:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: azure/spring-apps-deploy@v1
+        with:
+          azure-subscription: ${{ secrets.AZURE_SUBSCRIPTION }}
+          action: deploy
+          service-name: supplier-registry
+          app-name: supplier-registry
+          use-staging-deployment: false
+          package: ${{ env.ASC_PACKAGE_PATH }}
