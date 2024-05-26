@@ -38,7 +38,7 @@ public class SupplierController {
         if (subject == null) {
             throw new BadRequestException("Company not found");
         }
-        return new ResponseEntity<>(new BaseResponse(true, subject.name), HttpStatus.OK);
+        return new ResponseEntity<>(new BaseResponse(true, subject), HttpStatus.OK);
     }
 
 
