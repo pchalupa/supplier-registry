@@ -1,0 +1,22 @@
+name: Code Quality
+
+on: push
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'zulu'
+          cache: 'gradle'
+
+      - name: Run Checkstyle
+        run: ./gradlew checkstyleMain --no-daemon
+
+      - name: Run tests
+        run: ./gradlew test --no-daemon
