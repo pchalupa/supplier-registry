@@ -8,6 +8,7 @@ import com.supplierregistry.supplierregistry.errors.NotFound;
 import com.supplierregistry.supplierregistry.providers.Provider;
 import com.supplierregistry.supplierregistry.providers.Ares.entities.FindByIconResponse;
 import com.supplierregistry.supplierregistry.providers.Ares.repository.Ares;
+import com.supplierregistry.supplierregistry.utilities.Log;
 
 /**
  * Provider for ARES.
@@ -36,6 +37,7 @@ public class AresProvider implements Provider {
 
 			return subject;
 		} catch (Exception e) {
+			Log.debug(e.getMessage());
 			return null;
 		}
 	}
